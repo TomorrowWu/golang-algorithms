@@ -1,7 +1,6 @@
 package algorithm
 
 import (
-	"fmt"
 	"sort"
 	"log"
 )
@@ -54,7 +53,7 @@ func isHU(arr []int, bao int) bool {
 
 	//检测牌数量
 	if len(mjArr)%3 != 2 {
-		log.Println("牌数量不符合3n+2")
+		//log.Println("牌数量不符合3n+2")
 		return false
 	}
 
@@ -357,7 +356,7 @@ func getBaoNumToZhengPuJiang(arr []int) int {
 						if a[i] == a[i+1] {
 							if i == 0 || a[i-1] != a[i] {
 								b := append(a[:i], a[i+2:]...)
-								fmt.Println("b:", b)
+								//fmt.Println("b:", b)
 								return getNeedBaoNumToZhengPu(b)
 							}
 						}
@@ -432,24 +431,8 @@ func getNeedBaoNumToZhengPu(subArr []int) int {
 				needCount += duiZiNum //有多少个对子就需要多少个癞子把它变整扑
 				//3,分离2连
 				subArr, canLianNum := separateFeng2Lian_ruiJin(subArr)
-				needCount += canLianNum
-				if len(subArr) <= 2 {
-					return needCount + getNeedBaoNumToZhengPu(subArr)
-				} else {
-					for i := 0; i <= l-1; i += 2 {
-						switch i {
-						case l - 2:
-							//最后2张(len为偶数)
-							needCount += getNeedBaoNumToZhengPu(subArr[i:])
-						case l - 1:
-							//最后1张(len为基数)
-							needCount += getNeedBaoNumToZhengPu(subArr[i:])
-						default:
-							needCount += getNeedBaoNumToZhengPu(subArr[i : i+2])
-						}
-					}
-					return needCount
-				}
+				needCount += canLianNum + getNeedBaoNumToZhengPu(subArr)
+				return needCount
 			}
 		default:
 			//万或筒或条
@@ -462,24 +445,8 @@ func getNeedBaoNumToZhengPu(subArr []int) int {
 				needCount := 0
 				//3,分离2同和2连(相当于只需要1癞子就能成的牌都去掉)
 				subArr, canLianOrSameNum, _ := separate2LianAnd2Same(subArr, -1, false)
-				needCount += canLianOrSameNum //有多少个对子或2连就需要多少个癞子把它变整扑
-				if len(subArr) <= 2 {
-					return needCount + getNeedBaoNumToZhengPu(subArr)
-				} else {
-					for i := 0; i <= l-1; i += 2 {
-						switch i {
-						case l - 2:
-							//最后2张(len为偶数)
-							needCount += getNeedBaoNumToZhengPu(subArr[i:])
-						case l - 1:
-							//最后1张(len为基数)
-							needCount += getNeedBaoNumToZhengPu(subArr[i:])
-						default:
-							needCount += getNeedBaoNumToZhengPu(subArr[i : i+2])
-						}
-					}
-					return needCount
-				}
+				needCount += canLianOrSameNum + getNeedBaoNumToZhengPu(subArr) //有多少个对子或2连就需要多少个癞子把它变整扑
+				return needCount
 			}
 		}
 	}

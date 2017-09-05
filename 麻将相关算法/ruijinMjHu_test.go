@@ -92,7 +92,7 @@ func Benchmark_isHU(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		arr := []int{101, 101, 104, 104, 201, 201, 209, 209, 305, 306, 307, 407, 407, 407}
 		isHU(arr, 407)
-		//b.Logf("胡:%v", isHU(arr, 407))
+		b.Logf("胡:%v", isHU(arr, 407))
 	}
 
 	//b.RunParallel(func(pb *testing.PB) {
