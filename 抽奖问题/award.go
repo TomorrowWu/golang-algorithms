@@ -30,30 +30,24 @@ func GetAwardUserName(users map[string]int64) (name string) {
 //3,权重抽奖(用户count越大,获奖概率越大)
 //思路:index不再代表某个用户,而且n到n+count这个数字范围代表某个用户,类似数轴的思想,rand随机函数获取一个随机数字,此数字在那个数轴范围内,即为某用户
 func getAwardUser_weight(users map[string]int64) (name string) {
-	type awardUser struct {
-		name   string
-		offset int64
-		count  int64
-	}
-
-	userSli := make([]*awardUser, 0,len(users))
+	userArr := make([]string, len(users),len(users))
 	var sumCount int64 = 0
+	index := 0
 	for n, c := range users {
-		a := awardUser{
-			name:   n,
-			offset: sumCount,
-			count:  c,
-		}
 		//整理所有用户的count数据为数轴
-		userSli = append(userSli, &a)
+		userArr[index] = n
+		index++
 		sumCount += c
 	}
 
 	awardIndex := rand.Int63n(sumCount)
-	for _, u := range userSli {
+
+	var offset int64
+	for _, n := range userArr {
 		//判断获奖index落在那个用户区间内
-		if u.offset+u.count>awardIndex {
-			name = u.name
+		offset += users[n]
+		if offset > awardIndex {
+			name = n
 			return
 		}
 	}

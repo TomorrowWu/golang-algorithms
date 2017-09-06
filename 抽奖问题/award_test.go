@@ -33,7 +33,7 @@ func Test_GetAwardUserName(t *testing.T) {
 		}
 	}
 	for n, c := range awardCount {
-		fmt.Printf("%v:%v\n",n,c)
+		fmt.Printf("%v:%v\n", n, c)
 	}
 }
 
@@ -56,7 +56,24 @@ func Test_getAwardUser_weight(t *testing.T) {
 			awardCount[awardName] = 0
 		}
 	}
-	for n,c := range awardCount {
-		fmt.Printf("%v:%v \n",n,c)
+	for n, c := range awardCount {
+		fmt.Printf("%v:%v \n", n, c)
 	}
+}
+
+func Test_append(t *testing.T) {
+	test_len := 200000000
+	start := time.Now().Unix()
+	s := make([]int, test_len,test_len)
+	for i := 0; i < test_len; i++ {
+		s = append(s, i)
+	}
+	fmt.Println(time.Now().Unix() - start)
+
+	start_1 := time.Now().Unix()
+	s1 := make([]int, test_len,test_len)
+	for i := 0; i < test_len; i++ {
+		s1[i] = i
+	}
+	fmt.Println(time.Now().Unix() - start_1)
 }
