@@ -64,7 +64,7 @@ func Test_getAwardUser_weight(t *testing.T) {
 func Test_append(t *testing.T) {
 	test_len := 200000000
 	start := time.Now().Unix()
-	s := make([]int, test_len,test_len)
+	s := make([]int, 0,test_len)
 	for i := 0; i < test_len; i++ {
 		s = append(s, i)
 	}
