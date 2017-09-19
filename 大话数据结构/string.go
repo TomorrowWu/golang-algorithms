@@ -8,9 +8,14 @@ import "log"
  *
  */
 
-/* 返回子串T在主串S中第pos个字符之后的位置。
+/**
+ 吴名
+ 2017/9/15 上午2:00
+朴素的模式匹配算法
+ */
+
+/* 返回子串T在主串S中第pos个字符之后的索引。
 若不存在，则函数返回值为0。 */
-/* T非空，1≤pos≤StrLength(S)。 */
 func index(s, t string) int {
 	ls := len(s)
 	lt := len(t)
@@ -19,7 +24,7 @@ func index(s, t string) int {
 	i := 0
 	//j用于子串t中的当前位置下标
 	j := 0
-	count :=0
+	count := 0
 	for ; i <= ls-1 && j <= lt-1; {
 		count++
 		//若两字母相等
@@ -35,7 +40,7 @@ func index(s, t string) int {
 			j = 0
 		}
 	}
-	log.Printf("循环次数:%v",count)
+	log.Printf("循环次数:%v", count)
 	if j == lt {
 		return i - lt
 	} else {
