@@ -1,8 +1,6 @@
 package _色球问题
 
-import (
-	"log"
-)
+import "log"
 
 /**
  * WuMing 
@@ -23,11 +21,9 @@ func computeMatch(redCount, yellowCount, greenCount, total int) int {
 
 	num := 0
 	for r := 0; r <= redCount; r++ {
-
 		if yellowCount+greenCount < total-r {
 			continue
 		}
-
 		if r == total {
 			num++
 			log.Printf("red:%v yellow:%v green:%v", r, 0, 0)
@@ -46,13 +42,25 @@ func computeMatch(redCount, yellowCount, greenCount, total int) int {
 						num++
 					}
 				}
+			}
+		}
+	}
+	return num
+}
 
-				//for g := 0; g <= greenCount; g++ {
-				//	if r+y+g == total {
-				//		log.Printf("red:%v yellow:%v green:%v", r, y, g)
-				//		num++
-				//	}
-				//}
+func computeMatch1(redCount, yellowCount, greenCount, total int) int {
+	if redCount < 0 || yellowCount < 0 || greenCount < 0 || total <= 0 || total > redCount+yellowCount+greenCount {
+		return 0
+	}
+
+	num := 0
+	for r := 0; r <= redCount; r++ {
+		for y := 0; y <= yellowCount; y++ {
+			for g := 0; g <= greenCount; g++ {
+				if r+y+g == total {
+					//log.Printf("red:%v yellow:%v green:%v", r, y, g)
+					num++
+				}
 			}
 		}
 	}
