@@ -99,3 +99,9 @@ func Benchmark_numberOfSet(b *testing.B) {
 		b.Logf("套数:%v 王归位:%v", n, w)
 	}
 }
+
+func Test_getNeedBaoNumToZhengPu_daoZhou(t *testing.T) {
+	arr := []int{101,105,109}
+	n,s:= getNeedBaoNumToZhengPu_daoZhou(arr,102)
+	t.Logf("需要宝数量:%v,顺子:%v",n,s)
+}
