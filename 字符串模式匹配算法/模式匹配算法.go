@@ -1,7 +1,7 @@
 package 字符串模式匹配算法
 
 /**
- * WuMing 
+ * WuMing
  *2017/10/16 下午7:54
  *
  */
@@ -10,13 +10,13 @@ package 字符串模式匹配算法
  吴名
  2017/10/16 下午7:54
 暴力匹配
- */
+*/
 func violentMatch(s, p string) int {
 	lS := len(s)
 	lP := len(p)
 
 	i, j := 0, 0
-	for ; i < lS && j < lP; {
+	for i < lS && j < lP {
 		if s[i] == p[j] {
 			i++
 			j++
