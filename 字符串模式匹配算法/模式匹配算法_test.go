@@ -12,7 +12,7 @@ import (
  */
 
 func Test_KMPSearch(t *testing.T) {
-	source := "This is Rinc Liu's personal website."
-	pattern := "Rinc Liu"
+	source := "ababab"
+	pattern := "ba"
 	fmt.Printf("KMP: %d\n", KMPSearch(source, pattern))
 }
