@@ -35,9 +35,6 @@ func violentMatch(s, p string) int {
 	}
 }
 
-
-//++++++http://www.cnblogs.com/yjiyjige/p/3263858.html++++++++++++++++
-
 /**
  吴名
  2017/10/19 下午6:07
