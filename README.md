@@ -1,2 +1,2 @@
-# dataStructures-algorithm-demo
-常见算法Golang版本
+# dataStructures-algorithm
+笔者会在此项目中,总结工作和学习中遇到的算法,并给出尽可能清晰明了的解决思路及代码
