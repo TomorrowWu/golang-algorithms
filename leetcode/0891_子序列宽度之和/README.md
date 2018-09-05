@@ -1,4 +1,4 @@
-# [LeetCode算法系列_0891_子序列宽度之和](https://leetcode-cn.com/problems/sum-of-subsequence-widths/description/)
+[LeetCode算法系列_0891_子序列宽度之和](https://leetcode-cn.com/problems/sum-of-subsequence-widths/description/)
 
 ## 题目描述
 给定一个整数数组 A ，考虑 A 的所有非空子序列。
@@ -71,7 +71,7 @@ func sumSubseqWidths(a []int) int {
 - 解决问题,最终总是找出问题背后的数学规律
 
 ## GitHub
-- [项目源码在这里](https://github.com/TomorrowWu/leetcode-in-go)
+- [项目源码在这里](https://github.com/TomorrowWu/dataStructures-algorithm)
 - 笔者会一直维护该项目,对leetcode中的算法题进行解决,并写下自己的思路和见解,致力于人人都能看懂的算法
 
 ## 个人公众号

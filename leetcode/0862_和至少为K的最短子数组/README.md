@@ -124,7 +124,7 @@ func shortestSubarray(A []int, K int) int {
 - 数据结构作为数据的存储容易,对算法的影响也是巨大的
 
 ## GitHub
-- [项目源码在这里](https://github.com/TomorrowWu/leetcode-in-go/tree/master/0862_%E5%92%8C%E8%87%B3%E5%B0%91%E4%B8%BAK%E7%9A%84%E6%9C%80%E7%9F%AD%E5%AD%90%E6%95%B0%E7%BB%84)
+- [项目源码在这里](https://github.com/TomorrowWu/dataStructures-algorithm)
 - 笔者会一直维护该项目,对leetcode中的算法题进行解决,并写下自己的思路和见解,致力于人人都能看懂的算法
 
 ## 个人公众号
