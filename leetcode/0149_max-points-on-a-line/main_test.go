@@ -3,58 +3,58 @@ package main
 import "testing"
 
 func Test_maxPoints(t *testing.T) {
-	//t.Logf("最多的点数:%d\n", maxPoints([]Point{
-	//	{
-	//		X: 1,
-	//		Y: 1,
-	//	},
-	//	{
-	//		X: 2,
-	//		Y: 2,
-	//	},
-	//	{
-	//		X: 3,
-	//		Y: 3,
-	//	},
-	//})) //3
-	//
-	//t.Logf("最多的点数:%d\n", maxPoints([]Point{
-	//	{
-	//		X: 1,
-	//		Y: 1,
-	//	},
-	//	{
-	//		X: 3,
-	//		Y: 2,
-	//	},
-	//	{
-	//		X: 5,
-	//		Y: 3,
-	//	},
-	//	{
-	//		X: 4,
-	//		Y: 1,
-	//	},
-	//	{
-	//		X: 2,
-	//		Y: 3,
-	//	},
-	//	{
-	//		X: 1,
-	//		Y: 4,
-	//	},
-	//})) //4
-	//
-	//t.Logf("最多的点数:%d\n", maxPoints([]Point{
-	//	{
-	//		X: 0,
-	//		Y: 0,
-	//	},
-	//	{
-	//		X: 0,
-	//		Y: 0,
-	//	},
-	//})) //2
+	t.Logf("最多的点数:%d\n", maxPoints([]Point{
+		{
+			X: 1,
+			Y: 1,
+		},
+		{
+			X: 2,
+			Y: 2,
+		},
+		{
+			X: 3,
+			Y: 3,
+		},
+	})) //3
+
+	t.Logf("最多的点数:%d\n", maxPoints([]Point{
+		{
+			X: 1,
+			Y: 1,
+		},
+		{
+			X: 3,
+			Y: 2,
+		},
+		{
+			X: 5,
+			Y: 3,
+		},
+		{
+			X: 4,
+			Y: 1,
+		},
+		{
+			X: 2,
+			Y: 3,
+		},
+		{
+			X: 1,
+			Y: 4,
+		},
+	})) //4
+
+	t.Logf("最多的点数:%d\n", maxPoints([]Point{
+		{
+			X: 0,
+			Y: 0,
+		},
+		{
+			X: 0,
+			Y: 0,
+		},
+	})) //2
 
 	t.Logf("最多的点数:%d\n", maxPoints([]Point{
 		{
@@ -118,4 +118,14 @@ func Test_maxPoints(t *testing.T) {
 			Y: -9,
 		},
 	})) //6
+}
+
+func Test_mapKey(t *testing.T) {
+	t.Logf("两key相等=%t", Point{
+		X: 0,
+		Y: 0,
+	} == Point{
+		X: 0,
+		Y: 0,
+	})
 }

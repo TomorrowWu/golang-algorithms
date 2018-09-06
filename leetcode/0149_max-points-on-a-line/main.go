@@ -124,6 +124,7 @@ func maxPoints(points []Point) int {
 func maxPoints2(points []Point) int {
 	n := len(points)
 	// diffMap 用来过滤掉相同的点，并记录他们的个数
+	//map特点: point1和point2,不是同一个对象,但是X和Y属性值相同,则key相等
 	diffMap := make(map[Point]int, n)
 
 	for i := 0; i < n; i++ {
