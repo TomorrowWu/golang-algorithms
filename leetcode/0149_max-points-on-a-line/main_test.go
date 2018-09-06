@@ -3,7 +3,7 @@ package main
 import "testing"
 
 func Test_maxPoints(t *testing.T) {
-	t.Logf("最多的点数:%d\n", maxPoints2([]Point{
+	t.Logf("最多的点数:%d\n", maxPoints([]Point{
 		{
 			X: 1,
 			Y: 1,
@@ -18,7 +18,7 @@ func Test_maxPoints(t *testing.T) {
 		},
 	})) //3
 
-	t.Logf("最多的点数:%d\n", maxPoints2([]Point{
+	t.Logf("最多的点数:%d\n", maxPoints([]Point{
 		{
 			X: 1,
 			Y: 1,
@@ -45,7 +45,7 @@ func Test_maxPoints(t *testing.T) {
 		},
 	})) //4
 
-	t.Logf("最多的点数:%d\n", maxPoints2([]Point{
+	t.Logf("最多的点数:%d\n", maxPoints([]Point{
 		{
 			X: 0,
 			Y: 0,
@@ -56,7 +56,7 @@ func Test_maxPoints(t *testing.T) {
 		},
 	})) //2
 
-	t.Logf("最多的点数:%d\n", maxPoints2([]Point{
+	t.Logf("最多的点数:%d\n", maxPoints([]Point{
 		{
 			X: 0,
 			Y: -12,
