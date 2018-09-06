@@ -57,5 +57,7 @@ func maxPoints(points []Point) int {
 }
 
 func isSameLine(p1, p2, p3 Point) bool {
+	//高中数学中,判断第三个点在某条线上
+	//(p3.Y-p1.Y)/(p3.X-p1.X) == (p2.Y-p1.Y)/(p2.X-p1.X),则p3在p1-p2线上
 	return (p3.X-p1.X)*(p2.Y-p1.Y) == (p2.X-p1.X)*(p3.Y-p1.Y)
 }
