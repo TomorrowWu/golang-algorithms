@@ -120,7 +120,7 @@ func merge(left *ListNode, right *ListNode) *ListNode {
 ```
 
 ## GitHub
-- [项目源码在这里](https://github.com/TomorrowWu/dataStructures-algorithm/leetcode/0023.merge-k-sorted-lists)
+- [项目源码在这里](https://github.com/TomorrowWu/dataStructures-algorithm/tree/master/leetcode)
 - 笔者会一直维护该项目,对leetcode中的算法题进行解决,并写下自己的思路和见解,致力于人人都能看懂的算法
 
 ## 个人公众号

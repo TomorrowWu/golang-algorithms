@@ -102,7 +102,7 @@ func isSameLine(p1, p2, p3 Point) bool {
 - 好的代码,应该思路清晰,读者容易看懂,与君共勉
 
 ## GitHub
-- [项目源码在这里](https://github.com/TomorrowWu/dataStructures-algorithm/leetcode/0149_max-points-on-a-line)
+- [项目源码在这里](https://github.com/TomorrowWu/dataStructures-algorithm/tree/master/leetcode)
 - 笔者会一直维护该项目,对leetcode中的算法题进行解决,并写下自己的思路和见解,致力于人人都能看懂的算法
 
 ## 个人公众号
