@@ -21,6 +21,8 @@ func mergeKLists(lists []*ListNode) *ListNode {
 	default:
 		key := n / 2
 		//数组拆分,使下一次递归的lists的长度=2
+
+		//优化思路: mergeKLists(lists[:key]),使用Goroutine+channel进行并发合并(归并排序的特点)
 		return mergeKLists([]*ListNode{mergeKLists(lists[:key]), mergeKLists(lists[key:])})
 	}
 
