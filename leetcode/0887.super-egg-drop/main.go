@@ -17,7 +17,7 @@ F（X-1，N-1） + 1，1<=X<=M
 
 func superEggDrop(K, N int) int {
 	moves := 0
-	dp := [101]int{} // 1 <= K <= 100
+	dp := make([]int, K+1) // 1 <= K <= 100
 	// dp[i] = n 表示， i 个鸡蛋，利用 moves 次移动，最多可以检测 n 层楼
 	for dp[K] < N {
 		for i := K; i > 0; i-- {
@@ -67,15 +67,16 @@ func superEggDrop2(K, N int) int {
 			//假设楼层数可以是1---N,
 			min := cache[n][m]
 			for k := 1; k < m; k++ {
+				//M层,N鸡蛋,F（M，N）= Min（Max（ F（M-X，N）+ 1， F（X-1，N-1） + 1））
 				//(动态规划)
 				//鸡蛋碎了
-				temp := cache[n-1][k-1] + 1
-				if cache[n][m-k]+1 > temp {
-					temp = cache[n][m-k] + 1 //鸡蛋没碎
+				max := cache[n-1][k-1] + 1
+				if cache[n][m-k]+1 > max {
+					max = cache[n][m-k] + 1 //鸡蛋没碎
 				}
 
-				if temp < min {
-					min = temp
+				if max < min {
+					min = max
 				}
 			}
 			cache[n][m] = min
