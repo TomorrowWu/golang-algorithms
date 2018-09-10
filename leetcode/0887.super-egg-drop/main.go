@@ -21,6 +21,7 @@ func superEggDrop(K, N int) int {
 	// dp[i] = n 表示， i 个鸡蛋，利用 moves 次移动，最多可以检测 n 层楼
 	for dp[K] < N {
 		for i := K; i > 0; i-- {
+			//逆序从K---1,dp[i] = dp[i]+dp[i-1] + 1 相当于上次移动后的结果,dp[]函数要理解成抽象出来的一个函数,跟上一次移动时鸡蛋的结果有关系
 			dp[i] += dp[i-1] + 1
 			// 以上计算式，是从以下转移方程简化而来
 			// dp[moves][k] = 1 + dp[moves-1][k-1] + dp[moves-1][k]
@@ -38,6 +39,7 @@ func superEggDrop(K, N int) int {
 	return moves
 }
 
+//https://www.itcodemonkey.com/article/4915.html
 //https://www.itcodemonkey.com/article/5279.html
 
 //superEggDrop2 动态规划原始版(超出leetcode时间限制)
