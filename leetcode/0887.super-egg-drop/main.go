@@ -1,5 +1,20 @@
 package main
 
+/**
+我们可以把M层楼 / N个鸡蛋的问题转化成一个函数 F（M，N），其中楼层数M和鸡蛋数N是函数的两个参数，而函数的值则是最优解的最大尝试次数。
+假设我们第一个鸡蛋扔出的位置在第X层（1<=X<=M），会出现两种情况：
+1.第一个鸡蛋没碎
+那么剩余的M-X层楼，剩余N个鸡蛋，可以转变为下面的函数：
+ F（M-X，N）+ 1，1<=X<=M
+
+2.第一个鸡蛋碎了
+那么只剩下从1层到X-1层楼需要尝试，剩余的鸡蛋数量是N-1，可以转变为下面的函数：
+F（X-1，N-1） + 1，1<=X<=M
+
+整体而言，我们要求出的是 M层楼 / N个鸡蛋 条件下，最大尝试次数最小的解，所以这个题目的状态转移方程式如下：
+ F（M，N）= Min（Max（ F（M-X，N）+ 1， F（X-1，N-1） + 1）），1<=X<=M
+*/
+
 func superEggDrop(K, N int) int {
 	moves := 0
 	dp := [101]int{} // 1 <= K <= 100
@@ -21,4 +36,52 @@ func superEggDrop(K, N int) int {
 		moves++
 	}
 	return moves
+}
+
+//https://www.itcodemonkey.com/article/5279.html
+
+//superEggDrop2 动态规划原始版(超出leetcode时间限制)
+//
+//三层循环,时间复杂度是O(M*M*N)
+//
+//二维数组:空间复杂度是O(M*N)
+func superEggDrop2(K, N int) int {
+	if K < 1 || N < 1 {
+		return 0
+	}
+
+	//备忘录，存储K个鸡蛋，N层楼条件下的最优化尝试次数
+	//cache := [K + 1][N + 1]int{}
+	cache := make([][]int, K+1)
+
+	//把备忘录每个元素初始化成最大的尝试次数
+	for i := 0; i <= K; i++ {
+		cache[i] = make([]int, N+1)
+		for j := 1; j <= N; j++ {
+			cache[i][j] = j
+		}
+	}
+
+	for n := 2; n <= K; n++ {
+		for m := 1; m <= N; m++ {
+			//假设楼层数可以是1---N,
+			min := cache[n][m]
+			for k := 1; k < m; k++ {
+				//(动态规划)
+				//鸡蛋碎了
+				temp := cache[n-1][k-1] + 1
+				if cache[n][m-k]+1 > temp {
+					temp = cache[n][m-k] + 1 //鸡蛋没碎
+				}
+
+				if temp < min {
+					min = temp
+				}
+			}
+			cache[n][m] = min
+		}
+	}
+
+	return cache[K][N]
+
 }
