@@ -5,7 +5,7 @@ Go Solution for LeetCode algorithm problems, continually updating.
 
 |     |Easy|Medium|Hard|Total|
 |:---:|:---:|:---:|:---:|:---:|
-|**Accepted**|1|2|7|10|
+|**Accepted**|1|2|8|11|
 |**Total**|193|331|141|665|
 
 ## 题解
@@ -21,4 +21,5 @@ Go Solution for LeetCode algorithm problems, continually updating.
 |37|[sudoku-solver](./0037_sudoku-solver)|46.2%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
 |0149|[max-points-on-a-line](./0149_max-points-on-a-line)|10.7%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
 |0862|[shortest-subarray-with-sum-at-least-k](./0862_和至少为K的最短子数组)|6.4%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
+|0887|[super-egg-drop](./0887.super-egg-drop)|10.9%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
 |0891|[子序列宽度之和](./0891_子序列宽度之和)|12.1%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
