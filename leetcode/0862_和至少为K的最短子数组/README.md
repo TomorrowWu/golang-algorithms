@@ -1,4 +1,4 @@
-# [0862_和至少为 K 的最短子数组](https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/description/)
+[0862_和至少为 K 的最短子数组](https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/description/)
 
 ## 题目描述
 返回 A 的最短的非空连续子数组的长度，该子数组的和至少为 K 。

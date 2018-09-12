@@ -1,3 +1,4 @@
+[leetcode-0887_鸡蛋掉落](https://leetcode-cn.com/problems/super-egg-drop/description/)
 ## 概述
 扔鸡蛋问题是一道非常经典的面试题,Google、百度、腾讯等大厂都使用过,此题有多个变体版本,扩展性很强,解决思路有多种,下面一起来探讨吧!
 
@@ -358,7 +359,7 @@ func superEggDrop(K, N int) int {
 
 
 ## GitHub
-- [项目源码在这里](https://github.com/TomorrowWu/dataStructures-algorithm/tree/master/leetcode)
+- [https://github.com/TomorrowWu/dataStructures-algorithm/tree/master/leetcode](https://github.com/TomorrowWu/dataStructures-algorithm/tree/master/leetcode)
 - 笔者会一直维护该项目,对leetcode中的算法题进行解决,并写下自己的思路和见解,致力于人人都能看懂的算法
 
 ## 个人公众号
