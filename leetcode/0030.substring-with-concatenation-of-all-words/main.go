@@ -1,6 +1,9 @@
 package main
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 //本人自己写的算法(执行用时：2428 ms)
 func findSubstring(s string, words []string) []int {
@@ -170,4 +173,12 @@ func findSubstring2(s string, words []string) []int {
 	}
 
 	return res
+}
+
+func main() {
+	fmt.Printf("result=%v\n", findSubstring("barfoothefoobarman", []string{"foo", "bar"}))
+	fmt.Printf("result=%v\n", findSubstring("wordgoodstudentgoodword", []string{"word", "student"}))
+	fmt.Printf("result=%v\n", findSubstring("a", []string{}))
+	fmt.Printf("result=%v\n", findSubstring("wordgoodgoodgoodbestword", []string{"word", "good", "best", "word"}))
+	fmt.Printf("result=%v\n", findSubstring("wordgoodgoodgoodbestword", []string{"word", "good", "best", "good"}))
 }
