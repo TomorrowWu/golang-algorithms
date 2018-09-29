@@ -1,4 +1,4 @@
-package 字符串模式匹配算法
+package string
 
 import "fmt"
 

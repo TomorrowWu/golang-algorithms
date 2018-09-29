@@ -1,4 +1,4 @@
-package 大话数据结构
+package string
 
 import "log"
 
