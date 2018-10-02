@@ -7,7 +7,7 @@ go:
 before_install:
 
 script:
-- go test -race -coverprofile=coverage.txt -covermode=atomic
+- ./go.test.sh
 
 after_success:
 - bash <(curl -s https://codecov.io/bash) CODECOV_TOKEN="cd0c63ed-921b-4d67-a438-8cd3239c0c2f"
