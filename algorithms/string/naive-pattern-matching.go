@@ -3,7 +3,7 @@ package string
 import "log"
 
 /**
- * WuMing 
+ * WuMing
  *2017/9/15 上午1:40
  *
  */
@@ -12,7 +12,7 @@ import "log"
  吴名
  2017/9/15 上午2:00
 朴素的模式匹配算法
- */
+*/
 
 /* 返回子串T在主串S中第pos个字符之后的索引。
 若不存在，则函数返回值为0。 */
@@ -25,7 +25,7 @@ func index(s, t string) int {
 	//j用于子串t中的当前位置下标
 	j := 0
 	count := 0
-	for ; i <= ls-1 && j <= lt-1; {
+	for i <= ls-1 && j <= lt-1 {
 		count++
 		//若两字母相等
 		if s[i] == t[j] {

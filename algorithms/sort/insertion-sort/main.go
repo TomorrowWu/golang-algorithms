@@ -1,4 +1,4 @@
-package main
+package insertion_sort
 
 import "fmt"
 

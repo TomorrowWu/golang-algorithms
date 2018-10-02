@@ -1,4 +1,4 @@
-package string
+package knuth_morris_pratt
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 )
 
 /**
- * WuMing 
+ * WuMing
  *2017/10/19 下午6:30
  *
  */

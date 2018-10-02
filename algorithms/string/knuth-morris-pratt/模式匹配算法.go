@@ -1,4 +1,4 @@
-package string
+package knuth_morris_pratt
 
 import "fmt"
 
@@ -39,7 +39,7 @@ func violentMatch(s, p string) int {
  吴名
  2017/10/19 下午6:07
 生成next数组
- */
+*/
 //优化过后的next 数组求法
 func genNextArr(patternStr string) []int {
 	length := len(patternStr)
@@ -72,7 +72,7 @@ func genNextArr(patternStr string) []int {
  吴名
  2017/10/19 下午8:29
 KMP匹配
- */
+*/
 func KMPSearch(source string, pattern string) int {
 
 	ls := len(source)
