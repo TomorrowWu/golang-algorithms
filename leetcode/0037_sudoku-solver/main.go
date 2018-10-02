@@ -81,3 +81,7 @@ func isAvaliable(board [][]byte, n byte, r, c int) bool {
 
 	return true
 }
+
+func main() {
+
+}

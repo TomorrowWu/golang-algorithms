@@ -123,3 +123,7 @@ func isMatch4(s string, p string) bool {
 		}
 	}
 }
+
+func main() {
+
+}

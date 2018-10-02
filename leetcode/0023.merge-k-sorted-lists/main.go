@@ -70,3 +70,7 @@ func merge(left *ListNode, right *ListNode) *ListNode {
 
 	return head
 }
+
+func main() {
+
+}

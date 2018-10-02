@@ -82,3 +82,7 @@ func superEggDrop2(K, N int) int {
 	}
 	return cache[K][N]
 }
+
+func main() {
+
+}

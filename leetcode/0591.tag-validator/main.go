@@ -4,3 +4,7 @@ func isValid(code string) bool {
 
 	return false
 }
+
+func main() {
+
+}
