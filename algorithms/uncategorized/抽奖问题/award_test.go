@@ -2,9 +2,9 @@ package 抽奖问题
 
 import (
 	"fmt"
+	"math/rand"
 	"testing"
 	"time"
-	"math/rand"
 )
 
 /**
@@ -40,13 +40,13 @@ func Test_GetAwardUserName(t *testing.T) {
 	//	fmt.Println(GetAwardUserName(users))
 	//}
 
-	for i:=0; i<10; i++ {
+	for i := 0; i < 10; i++ {
 		fmt.Println(rand.Intn(100))
 	}
 }
 
 func Test_getAwardUser_weight(t *testing.T) {
-	var users map[string]int64 = map[string]int64{
+	var users = map[string]int64{
 		"a": 10,
 		"b": 6,
 		"c": 3,
@@ -56,7 +56,7 @@ func Test_getAwardUser_weight(t *testing.T) {
 
 	//rand.Seed(time.Now().Unix())
 	awardCount := make(map[string]int)
-	for i := 0; i <= 1000000; i++ {
+	for i := 0; i <= 100; i++ {
 		awardName := getAwardUser_weight(users)
 		if count, ok := awardCount[awardName]; ok {
 			awardCount[awardName] = count + 1
@@ -70,7 +70,7 @@ func Test_getAwardUser_weight(t *testing.T) {
 }
 
 func Test_append(t *testing.T) {
-	test_len := 200000000
+	test_len := 200
 	start := time.Now().Unix()
 	s := make([]int, 0, test_len)
 	for i := 0; i < test_len; i++ {
