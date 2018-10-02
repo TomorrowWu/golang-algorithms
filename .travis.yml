@@ -2,7 +2,6 @@ language: go
 
 go:
 - 1.11
-- tip
 
 before_install:
 - chmod 777 go.test.sh
