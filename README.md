@@ -198,18 +198,19 @@ tree is being used.
 
 ## Useful Information
 
-### References
-
 ### Big O Notation
 
 *Big O notation* is used to classify algorithms according to how their running time or space requirements grow as the input size grows.
 On the chart below you may find most common orders of growth of algorithms specified in Big O notation.
 
-![Big O graphs](./assets/big-o-graph.png)
+![Big-O Complexity Chart](https://github.com/TomorrowWu/pictures/blob/master/algorithms/Big-O%20Complexity%20Chart.png?raw=true)
 
 Source: [Big O Cheat Sheet](http://bigocheatsheet.com/).
 
 ### Common Data Structure Operations
 
+![Common Data Structure Operations](https://github.com/TomorrowWu/pictures/blob/master/algorithms/Common%20Data%20Structure%20Operations.png?raw=true)
 
 ### Array Sorting Algorithms
+
+![Array-Sorting_Algorithms](https://github.com/TomorrowWu/pictures/blob/master/algorithms/Array-Sorting_Algorithms.png?raw=true)
