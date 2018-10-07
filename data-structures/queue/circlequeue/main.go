@@ -60,7 +60,7 @@ func (circleQueue *CircleQueue) IsEmpty() bool {
 	return circleQueue.tail == circleQueue.head
 }
 
-//取出环形队列有多少个元素
+// Size 取出环形队列有多少个元素
 func (circleQueue *CircleQueue) Size() int {
 	//这是一个关键的算法.
 	//演算一下,size不可能超过maxSize,存在tail<head的情况,所以直接+maxSize,再取模
