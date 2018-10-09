@@ -91,7 +91,7 @@ cdata 不是 "<![CDATA[<div>]>]]>]]>" 的原因参照规则 7 。
 ## 个人思路
 
 ## GitHub
-- [https://github.com/TomorrowWu/dataStructures-algorithm/tree/master/leetcode](https://github.com/TomorrowWu/dataStructures-algorithm/tree/master/leetcode)
+- [源码在这里](https://github.com/TomorrowWu/golang-algorithms/blob/master/leetcode/0591.tag-validator/main.go)
 - 算法,面试,区块链
 
 ## 公众号「tomorrowwu」，编程·职场·思维
