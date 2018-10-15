@@ -64,6 +64,9 @@ func TestHasCycle(t *testing.T) {
 	t.Log(l.HasCycle())
 	l.head.next.next.next.next.next.next = l.head.next.next.next
 	t.Log(l.HasCycle())
+
+	l.head.next.next.next.next.next.next = nil
+	t.Log(l.HasCycle())
 }
 
 func TestMergeSortedList(t *testing.T) {
