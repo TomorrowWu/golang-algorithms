@@ -1,4 +1,4 @@
-package main
+package src
 
 func positiveSolution(n int) []int {
 	result := make([]int, n)

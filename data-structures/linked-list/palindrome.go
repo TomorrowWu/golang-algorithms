@@ -1,4 +1,4 @@
-package main
+package linkedlist
 
 /**
 思路1:用一个切片存前半部分
