@@ -144,3 +144,122 @@ func (l *LinkedList) Print() {
 	}
 	fmt.Println(format)
 }
+
+// Reverse reverses the linked-list.
+//
+// Time complexity is O(n)
+func (l *LinkedList) Reverse() {
+	if l.head == nil || l.head.next == nil || l.head.next.next == nil {
+		return
+	}
+
+	var pre *ListNode
+	cur := l.head.next
+	for cur != nil {
+		tmp := cur.next
+		cur.next = pre
+		pre = cur
+		cur = tmp
+	}
+	l.head.next = pre
+}
+
+// HasCycle judges linked-list if it is cycled-list
+func (l *LinkedList) HasCycle() bool {
+	if l.head != nil {
+		slow := l.head
+		fast := l.head
+		for fast != nil && fast.next != nil {
+			slow = slow.next
+			fast = fast.next.next
+			if slow == fast {
+				return true
+			}
+		}
+	}
+	return false
+}
+
+// MergeSortedList merges two sorted list
+func MergeSortedList(l1, l2 *LinkedList) *LinkedList {
+	if l1 == nil || l1.head == nil || l1.head.next == nil {
+		return l2
+	}
+
+	if l2 == nil || l2.head == nil || l2.head.next == nil {
+		return l1
+	}
+
+	newList := &LinkedList{
+		head: &ListNode{
+			next:  nil,
+			value: nil,
+		},
+		length: 0,
+	}
+
+	cur := newList.head
+	cur1 := l1.head.next
+	cur2 := l2.head.next
+	for cur1 != nil && cur2 != nil {
+		if cur1.value.(int) <= cur2.value.(int) {
+			cur.next = cur1
+			cur1 = cur1.next
+		} else {
+			cur.next = cur2
+			cur2 = cur2.next
+		}
+		cur = cur.next
+	}
+
+	if cur1 != nil {
+		cur.next = cur1
+	} else if cur2 != nil {
+		cur.next = cur2
+	}
+
+	return newList
+
+}
+
+// DeleteBottomN deletes The bottom NTH node
+func (l *LinkedList) DeleteBottomN(n int) {
+	if n <= 0 || l.head == nil || l.head.next == nil {
+		return
+	}
+
+	fast := l.head
+	for i := 1; i <= n && fast != nil; i++ {
+		fast = fast.next
+	}
+
+	if fast == nil {
+		return
+	}
+
+	// \-----n(fast)--------n-------\
+	// \-----n--------n(slow)-------\(fast)
+	slow := l.head
+	for fast.next != nil {
+		slow = slow.next
+		fast = fast.next
+	}
+	slow.next = slow.next.next
+}
+
+// FindMiddleNode returns middle node
+func (l *LinkedList) FindMiddleNode() *ListNode {
+	if l.head == nil || l.head.next == nil {
+		return nil
+	}
+	if l.head.next.next == nil {
+		return l.head.next
+	}
+
+	slow, fast := l.head, l.head
+	for fast != nil && fast.next != nil {
+		slow = slow.next
+		fast = fast.next.next
+	}
+	return slow
+}
