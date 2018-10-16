@@ -48,8 +48,8 @@ func (q *ArrayQueue) Dequeue() interface{} {
 	return val
 }
 
-// PrintAll prints the queue
-func (q *ArrayQueue) PrintAll() string {
+// String prints the queue
+func (q *ArrayQueue) String() string {
 	if q.head == q.tail {
 		return "empty queue"
 	}

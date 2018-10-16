@@ -2,8 +2,8 @@ package queue
 
 import "testing"
 
-func TestArrayQueue_EnQueue(t *testing.T) {
-	q := NewArrayQueue(5)
+func TestListQueue_EnQueue(t *testing.T) {
+	q := NewLinkedListQueue()
 	q.Enqueue(1)
 	q.Enqueue(2)
 	q.Enqueue(3)
@@ -11,12 +11,10 @@ func TestArrayQueue_EnQueue(t *testing.T) {
 	q.Enqueue(5)
 	q.Enqueue(6)
 	t.Log(q)
-
-	t.Log(q.String())
 }
 
-func TestArrayQueue_DeQueue(t *testing.T) {
-	q := NewArrayQueue(5)
+func TestListQueue_DeQueue(t *testing.T) {
+	q := NewLinkedListQueue()
 	q.Enqueue(1)
 	q.Enqueue(2)
 	q.Enqueue(3)
@@ -34,6 +32,4 @@ func TestArrayQueue_DeQueue(t *testing.T) {
 	t.Log(q)
 	q.Dequeue()
 	t.Log(q)
-
-	t.Log(q.String())
 }
