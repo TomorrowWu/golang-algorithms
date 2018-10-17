@@ -5,7 +5,7 @@ Go Solution for LeetCode algorithm problems, continually updating.
 
 |     |Easy|Medium|Hard|Total|
 |:---:|:---:|:---:|:---:|:---:|
-|**Accepted**|1|2|10|13|
+|**Accepted**|2|2|10|14|
 |**Total**|193|331|141|665|
 
 ## 题解
@@ -20,6 +20,7 @@ Go Solution for LeetCode algorithm problems, continually updating.
 |23|[merge-k-sorted-lists](./0023.merge-k-sorted-lists)|38.1%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
 |30|[substring-with-concatenation-of-all-words](./0030.substring-with-concatenation-of-all-words)|20.2%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
 |37|[sudoku-solver](./0037_sudoku-solver)|46.2%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
+|53|[maximum-subarray](./0053.maximum-subarray)|38.4%|Easy| |
 |0149|[max-points-on-a-line](./0149_max-points-on-a-line)|10.7%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
 |0591|[tag-validator](./0591.tag-validator)|21.7%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
 |0862|[shortest-subarray-with-sum-at-least-k](./0862_和至少为K的最短子数组)|6.4%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
