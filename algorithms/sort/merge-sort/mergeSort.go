@@ -1,15 +1,15 @@
-package merge_sort
+package merge
 
-//归并排序
-func MergeSort(array []int) []int {
+// mergeSort 归并排序
+func mergeSort(array []int) []int {
 	n := len(array)
 	if n < 2 {
 		return array
 	}
 
 	key := n / 2
-	left := MergeSort(array[0:key])
-	right := MergeSort(array[key:])
+	left := mergeSort(array[0:key])
+	right := mergeSort(array[key:])
 	return merge(left, right)
 }
 
