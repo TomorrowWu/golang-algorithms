@@ -5,7 +5,7 @@ Go Solution for LeetCode algorithm problems, continually updating.
 
 |     |Easy|Medium|Hard|Total|
 |:---:|:---:|:---:|:---:|:---:|
-|**Accepted**|2|2|10|14|
+|**Accepted**|2|3|10|15|
 |**Total**|193|331|141|665|
 
 ## 题解
