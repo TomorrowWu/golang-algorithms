@@ -23,6 +23,8 @@ func quickSort(a []int) {
 	quickSort(a[head+1:])
 }
 
+// findKthLargest 类似快速排序的思路,先进行分区,然后只需要递归一个分支
+// 时间复杂度为O(n)
 func findKthLargest(nums []int, k int) int {
 	size := len(nums)
 	if size < k {
