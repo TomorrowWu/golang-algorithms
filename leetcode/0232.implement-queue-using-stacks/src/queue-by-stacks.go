@@ -41,13 +41,12 @@ func (queue *MyQueue) Pop() int {
 
 // Peek Get the front element.
 func (queue *MyQueue) Peek() int {
-	if queue.Stack2.isEmpty() {
-		if queue.Stack1.isEmpty() {
-			return -1
-		}
-		return queue.Stack1.nums[0]
+	res := queue.Pop()
+	//队列为空
+	if res != -1 {
+		queue.Stack2.push(res)
 	}
-	return queue.Stack2.nums[queue.Stack2.len()-1]
+	return res
 }
 
 // Empty Returns whether the queue is empty.
