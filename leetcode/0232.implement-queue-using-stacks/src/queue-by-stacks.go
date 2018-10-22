@@ -9,58 +9,58 @@ package src
  * param_4 := obj.Empty();
  */
 
-// MyQueue defines a queue by two stacks
+// MyQueue defines Stack1 queue by two stacks
 type MyQueue struct {
-	a, b *stack
+	Stack1, Stack2 *stack
 }
 
-/** Initialize your data structure here. */
+// Constructor Initialize your data structure here.
 func Constructor() MyQueue {
 	return MyQueue{
-		a: newStack(),
-		b: newStack(),
+		Stack1: newStack(),
+		Stack2: newStack(),
 	}
 }
 
 // Push element x to the back of queue.
 func (queue *MyQueue) Push(x int) {
-	queue.a.push(x)
+	queue.Stack1.push(x)
 }
 
 // Pop Removes the element from in front of queue and returns that element.
 func (queue *MyQueue) Pop() int {
-	if queue.b.isEmpty() {
+	if queue.Stack2.isEmpty() {
 		//优化: 栈a中留一个元素供pop,可以少一次操作
-		for queue.a.len() > 1 {
-			queue.b.push(queue.a.pop())
+		for queue.Stack1.len() > 1 {
+			queue.Stack2.push(queue.Stack1.pop())
 		}
-		return queue.a.pop()
+		return queue.Stack1.pop()
 	}
-	return queue.b.pop()
+	return queue.Stack2.pop()
 }
 
 // Peek Get the front element.
 func (queue *MyQueue) Peek() int {
-	if queue.b.isEmpty() {
-		if queue.a.isEmpty() {
+	if queue.Stack2.isEmpty() {
+		if queue.Stack1.isEmpty() {
 			return -1
-		} else {
-			return queue.a.nums[0]
 		}
+		return queue.Stack1.nums[0]
 	}
-	return queue.b.nums[queue.b.len()-1]
+	return queue.Stack2.nums[queue.Stack2.len()-1]
 }
 
 // Empty Returns whether the queue is empty.
 func (queue *MyQueue) Empty() bool {
-	return queue.a.isEmpty() && queue.b.isEmpty()
+	return queue.Stack1.isEmpty() && queue.Stack2.isEmpty()
 }
 
-// stack defines a stack
+// stack defines Stack1 stack
 type stack struct {
 	nums []int
 }
 
+// newStack creates a empty stack
 func newStack() *stack {
 	return &stack{
 		nums: []int{},

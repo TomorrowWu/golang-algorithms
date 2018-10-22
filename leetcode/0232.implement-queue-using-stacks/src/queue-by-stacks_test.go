@@ -13,10 +13,10 @@ func TestConstructor(t *testing.T) {
 		{
 			name: "queue-constructor-1",
 			want: MyQueue{
-				a: &stack{
+				Stack1: &stack{
 					nums: []int{},
 				},
-				b: &stack{
+				Stack2: &stack{
 					nums: []int{},
 				},
 			},
@@ -62,8 +62,8 @@ func TestMyQueue_Push(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			queue := &MyQueue{
-				a: tt.fields.a,
-				b: tt.fields.b,
+				Stack1: tt.fields.a,
+				Stack2: tt.fields.b,
 			}
 			queue.Push(tt.args.x)
 		})
@@ -96,8 +96,8 @@ func TestMyQueue_Pop(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			queue := &MyQueue{
-				a: tt.fields.a,
-				b: tt.fields.b,
+				Stack1: tt.fields.a,
+				Stack2: tt.fields.b,
 			}
 			if got := queue.Pop(); got != tt.want {
 				t.Errorf("MyQueue.Pop() = %v, want %v", got, tt.want)
@@ -132,8 +132,8 @@ func TestMyQueue_Peek(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			queue := &MyQueue{
-				a: tt.fields.a,
-				b: tt.fields.b,
+				Stack1: tt.fields.a,
+				Stack2: tt.fields.b,
 			}
 			if got := queue.Peek(); got != tt.want {
 				t.Errorf("MyQueue.Peek() = %v, want %v", got, tt.want)
@@ -168,8 +168,8 @@ func TestMyQueue_Empty(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			queue := &MyQueue{
-				a: tt.fields.a,
-				b: tt.fields.b,
+				Stack1: tt.fields.a,
+				Stack2: tt.fields.b,
 			}
 			if got := queue.Empty(); got != tt.want {
 				t.Errorf("MyQueue.Empty() = %v, want %v", got, tt.want)
