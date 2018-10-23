@@ -6,10 +6,7 @@ package linkedlist
 空间复杂度：O(N)
 */
 func isPalindrome1(l *LinkedList) bool {
-	if l.length == 0 {
-		return false
-	}
-	if l.length == 1 {
+	if l.length <= 1 {
 		return true
 	}
 
@@ -43,10 +40,7 @@ func isPalindrome1(l *LinkedList) bool {
 空间复杂度：O(1)
 */
 func isPalindrome2(l *LinkedList) bool {
-	if l.length == 0 {
-		return false
-	}
-	if l.length == 1 {
+	if l.length <= 1 {
 		return true
 	}
 
@@ -89,7 +83,6 @@ func isPalindrome2(l *LinkedList) bool {
 		pre = cur
 		cur = next
 	}
-	l.head.next = pre
 
 	return isPalindrome
 }

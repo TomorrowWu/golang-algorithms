@@ -21,7 +21,7 @@ func TestPalindrome2(t *testing.T) {
 		for _, c := range str1 {
 			l.InsertToTail(string(c))
 		}
-		l.Print()
+		//l.Print()
 		t.Log(isPalindrome2(l))
 		l.Print()
 	}
