@@ -5,7 +5,7 @@ Go Solution for LeetCode algorithm problems, continually updating.
 
 |     |Easy|Medium|Hard|Total|
 |:---:|:---:|:---:|:---:|:---:|
-|**Accepted**|4|3|11|18|
+|**Accepted**|5|3|11|19|
 |**Total**|193|331|141|665|
 
 ## 题解
@@ -26,6 +26,7 @@ Go Solution for LeetCode algorithm problems, continually updating.
 |0206|[reverse-linked-list](./0206.reverse-linked-list)|53.8%|Easy||
 |0215|[kth-largest-element-in-an-array](./0215.kth-largest-element-in-an-array)|51.3%|Medium||
 |0232|[implement-queue-using-stacks](./0232.implement-queue-using-stacks)|54.5%|Easy||
+|0234|[palindrome-linked-list](./0234.palindrome-linked-list)|33.1%|Easy||
 |0591|[tag-validator](./0591.tag-validator)|21.7%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
 |0862|[shortest-subarray-with-sum-at-least-k](./0862_和至少为K的最短子数组)|6.4%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
 |0887|[super-egg-drop](./0887.super-egg-drop)|10.9%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
