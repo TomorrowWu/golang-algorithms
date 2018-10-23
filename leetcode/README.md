@@ -5,7 +5,7 @@ Go Solution for LeetCode algorithm problems, continually updating.
 
 |     |Easy|Medium|Hard|Total|
 |:---:|:---:|:---:|:---:|:---:|
-|**Accepted**|3|3|11|17|
+|**Accepted**|4|3|11|18|
 |**Total**|193|331|141|665|
 
 ## 题解
@@ -21,8 +21,9 @@ Go Solution for LeetCode algorithm problems, continually updating.
 |30|[substring-with-concatenation-of-all-words](./0030.substring-with-concatenation-of-all-words)|20.2%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
 |37|[sudoku-solver](./0037_sudoku-solver)|46.2%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
 |53|[maximum-subarray](./0053.maximum-subarray)|38.4%|Easy||
-|0146|[lru-cache](./0146.lru-cache)|33.0%|Hard|https://leetcode-cn.com/list/9nkbqoi|
+|0146|[lru-cache](./0146.lru-cache)|33.0%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
 |0149|[max-points-on-a-line](./0149_max-points-on-a-line)|10.7%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
+|0206|[reverse-linked-list](./0206.reverse-linked-list)|53.8%|Easy||
 |0215|[kth-largest-element-in-an-array](./0215.kth-largest-element-in-an-array)|51.3%|Medium||
 |0232|[implement-queue-using-stacks](./0232.implement-queue-using-stacks)|54.5%|Easy||
 |0591|[tag-validator](./0591.tag-validator)|21.7%|Hard|[❤](https://leetcode-cn.com/list/9nkbqoi)|
