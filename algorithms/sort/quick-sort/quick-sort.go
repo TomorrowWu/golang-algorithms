@@ -11,6 +11,7 @@ func qsort(data []int) {
 			data[i], data[tail] = data[tail], data[i]
 			tail--
 		} else {
+			//当data[i] == mid,出现不稳定排序
 			data[i], data[head] = data[head], data[i]
 			head++
 			i++

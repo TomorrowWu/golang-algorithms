@@ -1,6 +1,8 @@
 package merge
 
 // mergeSort 归并排序
+// 时间复杂度O(n*logN)
+// 空间复杂度O(n)
 func mergeSort(array []int) []int {
 	n := len(array)
 	if n < 2 {

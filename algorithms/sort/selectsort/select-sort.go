@@ -1,6 +1,8 @@
 package selectsort
 
-// SelectSort 选择排序
+// SelectSort 选择排序.
+// 时间复杂度O(n^2).
+// 不稳定排序.(比如[5,5,2])
 func SelectSort(a []int) {
 	arrLen := len(a)
 	if arrLen <= 1 {
