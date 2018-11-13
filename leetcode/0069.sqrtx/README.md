@@ -73,3 +73,7 @@ func mySqrt2(x int) int {
 [leetcode 69. x 的平方根](https://leetcode-cn.com/problems/sqrtx/description/)
 
 [极客时间 数据结构与算法之美](https://time.geekbang.org/column/article/42733)
+
+> 本文为原创文章，转载注明出处，欢迎扫码关注公众号 ```tomorrowwu``` 或者网站[https://lovecoding.club](https://lovecoding.club),第一时间看后续精彩文章，觉得好的话，顺手分享到朋友圈吧，感谢支持。
+
+![image](https://upload-images.jianshu.io/upload_images/5815624-4a8b49cfbaf037dd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)
