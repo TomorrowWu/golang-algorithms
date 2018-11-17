@@ -67,7 +67,8 @@ func mySqrt2(x int) int {
 
 ### GitHub
 - [源码传送门](https://github.com/TomorrowWu/golang-algorithms/blob/master/leetcode/0069.sqrtx/src/sqrtx.go)
-- 项目中会提供各种数据结构及算法的Golang实现, LeetCode解题思路及答案
+- 各种数据结构及算法的Golang实现, LeetCode解题思路及答案
+- [大厂面试题汇总及答案解析](https://github.com/TomorrowWu/interview)
 
 ###### 参考资料
 [leetcode 69. x 的平方根](https://leetcode-cn.com/problems/sqrtx/description/)
