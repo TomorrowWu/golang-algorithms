@@ -34,6 +34,7 @@ func findKthLargest(nums []int, k int) int {
 	pivot := nums[0]
 	head := 0
 	tail := size - 1
+	//把整个数组扫一遍，比pivot大的放左边，比pivot小的放右边
 	for i := 1; i <= tail; {
 		if nums[i] < pivot {
 			nums[i], nums[tail] = nums[tail], nums[i]
@@ -45,13 +46,13 @@ func findKthLargest(nums []int, k int) int {
 		}
 	}
 
+	//索引为head的元素即第k大
 	if head+1 == k {
 		return nums[head]
 	}
 
 	if head+1 < k {
 		return findKthLargest(nums[head+1:], k-head-1)
-	} else {
-		return findKthLargest(nums[:head], k)
 	}
+	return findKthLargest(nums[:head], k)
 }
