@@ -1,3 +1,13 @@
+---
+title: "leetcode 235. 二叉搜索树的最近公共祖先"
+date: 2018-12-30T21:45:09+08:00
+draft: false
+tags: ["算法","数据结构","LeetCode"]
+categories: ["数据结构与算法之美"]
+comment: true
+url: /2018/12/30/leetcode 235. 二叉搜索树的最近公共祖先.html
+---
+
 ### 题目描述
 给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先
 
@@ -31,5 +41,40 @@
 - 情况1：root.val > p.val 
 - 情况2： root.val < p.val
 
+### 代码实现
+```
+// TreeNode Definition for TreeNode.
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+	//4种情况：
+	if (root.Val-p.Val)*(root.Val-q.Val) <= 0 {
+		// 1. p,q分别在root的左右两边，那么 乘积小于0
+		//2. p或者q中一方==root，另一方为root的子节点（孙节点。。。）
+		return root
+	} else if root.Val > p.Val {
+		//3. p，q都在root的左子树中
+		return lowestCommonAncestor(root.Left, p, q)
+	} else {
+		//4. p，q都在root的右子树中
+		return lowestCommonAncestor(root.Right, p, q)
+	}
+
+}
+```
+
 ### 参考资料
-- [235. 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
+- [leetcode 235. 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
+
+### GitHub
+- [源码传送门](https://github.com/TomorrowWu/golang-algorithms/blob/master/leetcode/0235.lowest-common-ancestor-of-a-binary-search-tree/src/lowest-common-ancestor-of-a-binary-search-tree.go)
+- 各种数据结构及算法实现, LeetCode解题思路及答案
+- [大厂面试题汇总及答案解析](https://github.com/TomorrowWu/interview)
+
+> 本文为原创文章，转载注明出处，欢迎扫码关注公众号 ```楼兰``` 或者网站[https://lovecoding.club](https://lovecoding.club),第一时间看后续精彩文章，觉得好的话，顺手分享到朋友圈吧，感谢支持。
+
+![image](https://upload-images.jianshu.io/upload_images/5815624-4a8b49cfbaf037dd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)
