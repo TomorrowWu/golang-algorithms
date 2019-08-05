@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func Test_fib(t *testing.T) {
+func Test_bitwiseComplement(t *testing.T) {
 	type args struct {
 		N int
 	}
@@ -16,18 +16,22 @@ func Test_fib(t *testing.T) {
 		{
 			name: "Test-1",
 			args: args{
-				N: 2,
+				N: 5,
 			},
-			want: 1,
+			want: 2,
+		},
+		{
+			name: "Test-2",
+			args: args{
+				N: 7,
+			},
+			want: 0,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := fib(tt.args.N); got != tt.want {
-				t.Errorf("fib() = %v, want %v", got, tt.want)
-			}
-			if got := TailRecursion(tt.args.N); got != tt.want {
-				t.Errorf("fib() = %v, want %v", got, tt.want)
+			if got := bitwiseComplement(tt.args.N); got != tt.want {
+				t.Errorf("bitwiseComplement() = %v, want %v", got, tt.want)
 			}
 		})
 	}
