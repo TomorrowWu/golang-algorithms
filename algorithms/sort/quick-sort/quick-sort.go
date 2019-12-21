@@ -10,13 +10,15 @@ func qsort(data []int) {
 		if data[i] > mid {
 			data[i], data[tail] = data[tail], data[i]
 			tail--
-		} else {
+		} else if data[i] < mid {
 			//当data[i] == mid,出现不稳定排序
 			data[i], data[head] = data[head], data[i]
 			head++
 			i++
+		} else {
+			i++
 		}
 	}
 	qsort(data[:head])
-	qsort(data[head+1:])
+	qsort(data[tail+1:])
 }
