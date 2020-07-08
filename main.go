@@ -5,9 +5,11 @@ import (
 	"fmt"
 	"hash/crc32"
 	"time"
+
+	jsoniter "github.com/json-iterator/go"
 )
 
-//var jsonIterator = jsoniter.ConfigCompatibleWithStandardLibrary
+var jsonIterator = jsoniter.ConfigCompatibleWithStandardLibrary
 
 type tmp struct {
 	A string `json:"a"`
@@ -103,9 +105,10 @@ func main() {
 	fmt.Println(GetDeviceIdTail("0242C83737B3C7CDB836B9763C9EA984"))
 	fmt.Println(time.Unix(time.Now().Unix(), 0), time.Unix(time.Now().Unix(), 0).Format("01/02/2006"))
 
-	s := `{"is_cover":"1"}`
+	s := `{"is_cover":"1","room_id":19170}`
 	i := struct {
-		IsCover bool `json:"is_cover,string"`
+		IsCover bool  `json:"is_cover,string"`
+		RoomId  int64 `json:"room_id"`
 	}{}
 	if err := json.Unmarshal([]byte(s), &i); err != nil {
 		fmt.Println(err)
