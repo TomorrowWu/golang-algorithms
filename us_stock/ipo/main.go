@@ -36,6 +36,8 @@ func main() {
 	var profit12 float64
 	// 策略13：首日开盘买入，第6交易日开盘卖出,首日开盘价比招股价高80%不买
 	var profit13 float64
+	// 策略14：首日开盘买入，第2交易日开盘卖出
+	var profit14 float64
 	for _, s := range stocks {
 		if s.IpoPrice <= 0 {
 			continue
@@ -79,9 +81,13 @@ func main() {
 
 		profit12 += 10000.00/s.Day1OpenPrice*s.Day3OpenPrice - 10000
 
-		if s.Day1OpenPrice/s.IpoPrice <= 1.8 {
-			profit13 += 10000.00/s.Day1OpenPrice*s.Day6OpenPrice - 10000
+		if s.Day1OpenPrice/s.IpoPrice <= 1.9 {
+			profit13 += 10000.00/s.Day1OpenPrice*s.Day5OpenPrice - 10000
+		} else {
+			log.Println("开盘翻倍")
 		}
+
+		profit14 += 10000.00/s.Day1OpenPrice*s.Day2OpenPrice - 10000
 	}
 	fmt.Printf("策略1：首日开盘买入，第6交易日开盘卖出,每单购买1w美金，总收益:%.2f,股票数:%d\n", profit1, len(stocks))
 	fmt.Printf("策略2：首日收盘买入，第6交易日开盘卖出,每单购买1w美金，总收益:%.2f,股票数:%d\n", profit2, len(stocks))
@@ -95,7 +101,8 @@ func main() {
 	fmt.Printf("策略10：首日开盘买入，第4交易日开盘价<首日收盘价,第4交易日开盘卖出，剩下的第6交易日开盘卖出,每单购买1w美金，总收益:%.2f,股票数:%d\n", profit10, len(stocks))
 	fmt.Printf("策略11：首日开盘买入，第5交易日开盘价<首日收盘价,第5交易日开盘卖出，剩下的第6交易日开盘卖出,每单购买1w美金，总收益:%.2f,股票数:%d\n", profit11, len(stocks))
 	fmt.Printf("策略12：首日开盘买入，第3交易日开盘卖出,每单购买1w美金，总收益:%.2f,股票数:%d\n", profit12, len(stocks))
-	fmt.Printf("策略13：首日开盘买入，第6交易日开盘卖出,首日开盘价比招股价高80%%不买，总收益:%.2f,股票数:%d\n", profit13, len(stocks))
+	fmt.Printf("策略13：首日开盘买入，第5交易日开盘卖出,首日开盘价比招股价高90%%不买，总收益:%.2f,股票数:%d\n", profit13, len(stocks))
+	fmt.Printf("策略14：首日开盘买入，第2交易日开盘卖出,每单购买1w美金，总收益:%.2f,股票数:%d\n", profit14, len(stocks))
 }
 
 type Stock struct {
