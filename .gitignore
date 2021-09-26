@@ -1,3 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
-/us_stock/
+./us_stock/ipo/data.json
+./us_stock/ipo/main.go
