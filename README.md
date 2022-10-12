@@ -29,7 +29,6 @@ the data.
 * `B` [Hash Table](./data-structures/hash-table)
 * `B` [Heap](./data-structures/heap) - max and min heap versions
 * `B` [Priority Queue](./data-structures/priority-queue)
-* `A` [Trie](./data-structures/trie)
 * `A` [Tree](./data-structures/tree)
   * `A` [Binary Search Tree](./data-structures/tree/binary-search-tree)
   * `A` [AVL Tree](./data-structures/tree/avl-tree)
