@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"hash/crc32"
+	"io"
 	"io/ioutil"
 	"net"
 	"net/http"
@@ -330,16 +331,138 @@ func main() {
 	//d := time.Duration(15*60) * time.Second
 	//fmt.Println(d.Seconds())
 
-	var arr []*time.Duration
-	fmt.Println(arr, arr == nil)
-	
-	json.Unmarshal([]byte("[{}]"),&arr)
-	fmt.Println(arr, arr == nil)
-	
+	//var arr []*time.Duration
+	//fmt.Println(arr, arr == nil)
+	//
+	//json.Unmarshal([]byte("[{}]"), &arr)
+	//fmt.Println(arr, arr == nil)
+
 	//arr = []*time.Duration{}
 	//fmt.Println(arr, arr == nil)
-	
-	fmt.Println(fmt.Sprintf("select user_id from user_geo where geohash_value like '%s%%' limit %d", "xxx", 5000))
+
+	//fmt.Println(fmt.Sprintf("select user_id from user_geo where geohash_value like '%s%%' limit %d", "xxx", 5000))
+
+	//AddMobiMaterial()
+
+	//fmt.Printf("===%s===", strings.Join([]string{}, ","))
+
+	//Url, _ := url.Parse("sm://facebook_content_deferred_link")
+	//parameters := url.Values{}
+	//parameters.Add("ad_type", "2")
+	//parameters.Add("show_guide", "0")
+	//parameters.Add("language_code", "en")
+	//parameters.Add("sm_id", "123")
+	//parameters.Add("first_start_tab", "sing")
+	//parameters.Add("uid", strconv.FormatInt(1, 10))
+	//parameters.Add("song_id", "123")
+	//parameters.Add("mid", strconv.FormatInt(1, 10))
+	//parameters.Add("channel_extra", `["country:us","genre:pop"]`)
+	//Url.RawQuery = parameters.Encode()
+
+	//fmt.Println(Url.String())
+
+	//url1, _ := url.Parse("sm://appsflyer_content_onelink_link")
+	//parameters1 := url.Values{}
+	//parameters1.Add("language_code", "en")
+	//parameters1.Add("song_id", "123")
+	//parameters1.Add("channel_extra", `["country:us","genre:pop"]`)
+	//parameters1.Add("df_referrer", "")
+	//url1.RawQuery = parameters1.Encode()
+
+	//deeplink := "https://starmaker.onelink.me/xzo7?pid=TT&deep_link_value=sm://appsflyer_content_onelink_link?language_code=%s&song_id=%s&channel_extra=%s&c=tt-deeplink&is_retargeting=true&af_click_lookback=7d"
+	//deeplink = fmt.Sprintf(deeplink, contentLan, songId, extra)
+
+	//url2, _ := url.Parse("https://starmaker.onelink.me/xzo7")
+	//parameters2 := url.Values{}
+	//parameters2.Add("pid", "TT")
+	//parameters2.Add("deep_link_value", url1.String())
+	//parameters2.Add("c", "tt-deeplink")
+	//parameters2.Add("is_retargeting", "true")
+	//parameters2.Add("af_click_lookback", "7d")
+	//url2.RawQuery = parameters2.Encode()
+
+	//fmt.Println(url2.String(), len(url2.String()))
+
+	//fmt.Println(url.QueryEscape("https://starmaker.onelink.me/xzo7?af_click_lookback=7d&c=tt-deeplink&is_retargeting=true&pid=TT&deep_link_value=sm://appsflyer_content_onelink_link?channel_extra=[\"country:us\",\"genre:pop\"]&df_referrer=&language_code=en&song_id=123"))
+
+	//enEscapeUrl, _ := url.QueryUnescape("ONEPLUS%20A5000")
+	//fmt.Println(enEscapeUrl)
+
+	//deepLinkValue := fmt.Sprintf("sm://appsflyer_content_onelink_link?channel_extra=%s&language_code=%s&song_id=%s", url.QueryEscape(`["country:us","genre:pop"]`), "en", "123")
+	//s := fmt.Sprintf("https://starmaker.onelink.me/xzo7?af_click_lookback=7d&c=tt-deeplink&is_retargeting=true&pid=TT&deep_link_value=%s", url.QueryEscape(deepLinkValue))
+	//fmt.Println(s)
+
+	//fmt.Println(url.QueryEscape(`["country:us","genre:pop"]`))
+	//
+	//unescape, _ := url.QueryUnescape(url.QueryEscape(`["country:us","genre:pop"]`))
+	//unescape, _ = url.QueryUnescape(unescape)
+	//fmt.Println(unescape)
+	//
+	//fmt.Println("=" + strings.Join([]string{}, ",") + "=")
+	//
+	//ssql := fmt.Sprintf("select m_id, sm_id, nv, source, video_path, hook_path,ext, `type`, recall_score from sm_volume_bought "+
+	//	"where dt=? and (language=? or language like '%s-%%') and country=? and t=? order by recall_score desc", "en")
+	//fmt.Println(ssql)
+	//
+	//offset := map[string]int64{
+	//	"IN": 5.5 * 3600, // UTC+5:30
+	//}
+	//fmt.Println(offset["IN"])
+
+	//fn := func() {
+	//	fmt.Println("test")
+	//}
+	//Pulse(fn, time.Second)
+
+	//time.Sleep(time.Minute)
+
+	//var arr []int64
+	//_ = json.Unmarshal([]byte("[1,2]"), &arr)
+	//fmt.Println(arr)
+
+	//ssql := fmt.Sprintf("SELECT `id` FROM `text_tpl_class` WHERE `tmp_ids` LIKE '%%\"tpl_id\":%d%%'", 1)
+	//fmt.Println(ssql)
+
+	//dir, _ := os.Getwd()
+	//dirName := "text_template_" + fmt.Sprintf("%d_%d", 1, time.Now().UnixMicro())
+	//tmpDir := path.Join(dir, dirName)
+	//_ = os.MkdirAll(tmpDir, os.ModePerm)
+	//
+	//localJsonFile := path.Join(tmpDir, "tpl.json")
+	//_ = os.WriteFile(localJsonFile, []byte("{}"), os.ModePerm)
+	//out, err := exec.Command("zip", "-r", dirName+".zip", dirName).Output()
+	//fmt.Println(out, err, dir)
+
+	//zipDir := path.Join(dir, dirName+".zip")
+	//zipFile, _ := os.Create(zipDir)
+	//defer zipFile.Close()
+	//zipwriter := zip.NewWriter(zipFile)
+	//defer zipwriter.Close()
+	//zipwriter.Create(dirName + "/")
+	//defer func() {
+	//	if err := os.RemoveAll(tmpDir); err != nil {
+	//	}
+	//}()
+
+	//type tmp struct {
+	//	Id int64 `json:"id"`
+	//}
+	//var t = new(tmp)
+	//jsonIterator.UnmarshalFromString(`{"id":1}`, t)
+	//fmt.Println(t)
+
+	//m := make(map[int][]int64)
+	//m[0] = append(m[0], 123)
+	//fmt.Println(m)
+
+	data := map[string]map[string]int64{}
+	jsonIterator.UnmarshalFromString(`{"7036874317771764":{"background_effects":1665196471,"box_background":1665196471,"box_pendant":1665309742,"profile_pendant":1665198607,"top_part_background":1665470057}}`, &data)
+	fmt.Println(data)
+
+	data["1"] = map[string]int64{}
+
+	s, _ := jsonIterator.MarshalToString(data)
+	fmt.Println(s)
 
 }
 
@@ -603,4 +726,85 @@ func Test_Send() {
 	fmt.Println("http协议:", request.Proto, response.Proto)
 	//atomic.AddInt64(&succNum, 1)
 	defer response.Body.Close()
+}
+
+func AddMobiMaterial() {
+	// https://ads-admin.static.kunlun.com/api/material?product=starmaker&page=0&per_page=10
+
+	type tmp struct {
+		Code int64  `json:"code"`
+		Msg  string `json:"msg"`
+		Data struct {
+			List []struct {
+				Id       int64  `json:"id"`
+				Country  string `json:"country"`
+				Language string `json:"language"`
+				Url      string `json:"url"`
+				Typ      int64  `json:"type"` // 1是图片，2是视频
+			} `json:"list"`
+		} `json:"data"`
+	}
+
+	var page int64 = 0
+	for {
+		p := "starmaker"
+		d := time.Now().Add(-1 * 24 * time.Hour).Format("2006-01-02")
+		pageS := strconv.FormatInt(page, 10)
+		pageSize := "50" // 最多50条
+
+		req, _ := http.NewRequest(http.MethodGet, "https://ads-admin.static.kunlun.com/api/material", nil)
+		q := req.URL.Query()
+		q.Add("start_date", d)
+		q.Add("page", pageS)
+		q.Add("per_page", pageSize)
+		q.Add("product", p)
+		q.Add("api_key", "9A726A18BEE7A5C148B80DA0490D2E59")
+		req.URL.RawQuery = q.Encode()
+
+		//param := fmt.Sprintf("page=%s&per_page=%s&product=%s&start_date=%s&api_key=9A726A18BEE7A5C148B80DA0490D2E59", pageS, pageSize, p, d)
+
+		req.Header.Set("Content-Type", "application/json")
+		req.Header.Set("Authorization", "Bearer 8oR+VRlRGXewaag+hiy4QQ")
+		resp, err := http.DefaultClient.Do(req)
+		if err != nil {
+			fmt.Printf("err:%+v", err)
+			return
+		}
+
+		respBody, err := io.ReadAll(resp.Body)
+		fmt.Printf("req:%s,body:%s,err:%+v\n", req.URL.RawQuery, string(respBody), err)
+
+		ret := new(tmp)
+		jsonIterator.Unmarshal(respBody, ret)
+		_ = resp.Body.Close()
+
+		if len(ret.Data.List) > 0 {
+			fmt.Printf("page:%d\n", page)
+
+			//TODO 吴名 2021/10/28 21:17 写入到 material 表(去掉已有的)
+
+			// 还有下一页
+			page++
+		} else {
+			fmt.Printf("stop\n")
+			break
+		}
+	}
+}
+
+func Pulse(fn func(), duration time.Duration) {
+	fn()
+	go func() {
+		for range time.NewTicker(duration).C {
+			func() {
+				defer func() {
+					if err := recover(); err != nil {
+						fmt.Printf("recover err:%v\n", err)
+					}
+				}()
+				fn()
+				panic("panic")
+			}()
+		}
+	}()
 }
