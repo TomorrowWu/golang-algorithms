@@ -4,24 +4,24 @@ package _151_reverse_words_in_a_string
 func reverseWords(s string) string {
 	l1 := len(s)
 	s1 := []byte(s)
-	// 移除开头和结尾的空格
-	left, right := 0, l1-1
-	for left <= right && s[left] == ' ' {
+
+	// 多个空格，只留1个空格
+	left := 0
+	for j := left; j < l1; {
+		for s1[j] == ' ' && j+1 < l1 && s1[j+1] == ' ' {
+			j++
+		}
+		s1[left] = s1[j]
 		left++
+		j++
 	}
-	for left <= right && s[right] == ' ' {
-		right--
-	}
-	if left > right {
-		return ""
-	}
-	s1 = s1[left : right+1]
+	s1 = s1[:left]
 
-	// 移除中间的空格
-	// TODO 吴名 2023/2/28 21:31
-	l3 := len(s1)
-	for i, j := 0, 0; j < l3; {
-
+	if len(s1) >= 2 && s1[0] == ' ' {
+		s1 = s1[1:]
+	}
+	if len(s1) >= 1 && s1[len(s1)-1] == ' ' {
+		s1 = s1[:len(s1)-1]
 	}
 
 	// 反转所有字母
